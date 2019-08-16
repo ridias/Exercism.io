@@ -1,0 +1,10 @@
+#gitignore for exercism folders
+
+**/node_modules
+**/.exercism
+**/bin
+**/obj
+**/.pytest_cache
+**/__pycache__
+**.editorconfig
+**/.vs
