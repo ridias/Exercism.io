@@ -1,17 +1,29 @@
-# Bob
+# Two Fer
 
-Bob is a lackadaisical teenager. In conversation, his responses are very limited.
+`Two-fer` or `2-fer` is short for two for one. One for you and one for me.
 
-Bob answers 'Sure.' if you ask him a question.
+Given a name, return a string with the message:
 
-He answers 'Whoa, chill out!' if you yell at him.
+```text
+One for X, one for me.
+```
 
-He retorts 'Calm down, I know what I'm doing!' if you yell a question at him.
+Where X is the given name.
 
-He says 'Fine. Be that way!' if you address him without actually saying
-anything.
+However, if the name is missing, return the string:
 
-He answers 'Whatever.' to anything else.
+```text
+One for you, one for me.
+```
+
+Here are some examples:
+
+|Name    |String to return 
+|:-------|:------------------
+|Alice   |One for Alice, one for me. 
+|Bob     |One for Bob, one for me.
+|        |One for you, one for me.
+|Zaphod  |One for Zaphod, one for me.
 
 ## Setup
 
@@ -43,7 +55,7 @@ Once you get a test passing, you can enable the next one by changing `xtest` to
 
 ## Source
 
-Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
+[https://github.com/exercism/problem-specifications/issues/757](https://github.com/exercism/problem-specifications/issues/757)
 
 ## Submitting Incomplete Solutions
 

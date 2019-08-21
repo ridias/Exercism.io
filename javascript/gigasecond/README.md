@@ -1,17 +1,9 @@
-# Bob
+# Gigasecond
 
-Bob is a lackadaisical teenager. In conversation, his responses are very limited.
+Given a moment, determine the moment that would be after a gigasecond
+has passed.
 
-Bob answers 'Sure.' if you ask him a question.
-
-He answers 'Whoa, chill out!' if you yell at him.
-
-He retorts 'Calm down, I know what I'm doing!' if you yell a question at him.
-
-He says 'Fine. Be that way!' if you address him without actually saying
-anything.
-
-He answers 'Whatever.' to anything else.
+A gigasecond is 10^9 (1,000,000,000) seconds.
 
 ## Setup
 
@@ -43,7 +35,7 @@ Once you get a test passing, you can enable the next one by changing `xtest` to
 
 ## Source
 
-Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
+Chapter 9 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=09](http://pine.fm/LearnToProgram/?Chapter=09)
 
 ## Submitting Incomplete Solutions
 
