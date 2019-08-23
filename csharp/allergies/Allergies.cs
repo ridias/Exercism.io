@@ -42,14 +42,36 @@ public class Allergies
 
         while (score > 0)
         {
-            if (score % 2 == 1 && value == 1) list.Add(Allergen.Eggs);
-            else if (score % 2 == 1 && value == 2) list.Add(Allergen.Peanuts);
-            else if (score % 2 == 1 && value == 4) list.Add(Allergen.Shellfish);
-            else if (score % 2 == 1 && value == 8) list.Add(Allergen.Strawberries);
-            else if (score % 2 == 1 && value == 16) list.Add(Allergen.Tomatoes);
-            else if (score % 2 == 1 && value == 32) list.Add(Allergen.Chocolate);
-            else if (score % 2 == 1 && value == 64) list.Add(Allergen.Pollen);
-            else if (score % 2 == 1 && value == 128) list.Add(Allergen.Cats);
+            if(score % 2 == 1)
+            {
+                switch (value)
+                {
+                    case 1:
+                        list.Add(Allergen.Eggs);
+                        break;
+                    case 2:
+                        list.Add(Allergen.Peanuts);
+                        break;
+                    case 4:
+                        list.Add(Allergen.Shellfish);
+                        break;
+                    case 8:
+                        list.Add(Allergen.Strawberries);
+                        break;
+                    case 16:
+                        list.Add(Allergen.Tomatoes);
+                        break;
+                    case 32:
+                        list.Add(Allergen.Chocolate);
+                        break;
+                    case 64:
+                        list.Add(Allergen.Pollen);
+                        break;
+                    case 128:
+                        list.Add(Allergen.Cats);
+                        break;
+                }
+            }
             score = score >> 1;
             value = value << 1;
         }
