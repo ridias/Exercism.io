@@ -4,15 +4,27 @@
 //
 
 export class Triangle {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(number) {
+    this.number = number
   }
 
   get lastRow() {
-    throw new Error("Remove this statement and implement this function");
+    return this.rows[this.rows.length - 1]
   }
 
   get rows() {
-    throw new Error("Remove this statement and implement this function");
+    //there is the general formula for each cell: n! / (k! * (n - k)!)
+
+    let result = [[1]]
+    
+    for(let i = 2; i <= this.number; i++ ){
+      let row = []
+      for(let j = 0; j < result[result.length - 1].length; j++ ){
+        j == 0 ? row.push(1) : row.push(result[result.length - 1][j - 1] + result[result.length - 1][j])
+      }
+      row.push(1)
+      result.push(row)
+    }
+    return result
   }
 }
