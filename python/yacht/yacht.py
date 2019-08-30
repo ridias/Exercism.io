@@ -31,7 +31,7 @@ CHOICE = None
 def score(dice, category):
     result = howManyElements(dice)
     if category == ONES:
-        print("estoy en ones")
+        
     pass
 
 def howManyElements(dice):
