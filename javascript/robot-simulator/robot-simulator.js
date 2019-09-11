@@ -4,49 +4,77 @@
 //
 
 export class InvalidInputError extends Error {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(message) {
+    super(message)
   }
 }
 
 export class Robot {
-  orient() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(){
+    this.direction = null
+    this.points = []
+  }
+
+  orient(direction) {
+    if(!/(east|north|south|west){1}/.test(direction)) throw new InvalidInputError("Invalid direction")
+    this.direction = direction
   }
 
   get bearing() {
-    throw new Error("Remove this statement and implement this function");
+    return this.direction
   }
 
   get coordinates() {
-    throw new Error("Remove this statement and implement this function");
+    return this.points
   }
 
   turnRight() {
-    throw new Error("Remove this statement and implement this function");
+    if(this.direction == "north") this.direction = "east"
+    else if(this.direction == "east") this.direction = "south"
+    else if(this.direction == "south") this.direction = "west"
+    else this.direction = "north"
   }
 
   turnLeft() {
-    throw new Error("Remove this statement and implement this function");
+    if(this.direction == "north") this.direction = "west"
+    else if(this.direction == "east") this.direction = "north"
+    else if(this.direction == "south") this.direction = "east"
+    else this.direction = "south"
   }
 
-  at() {
-    throw new Error("Remove this statement and implement this function");
+  at(x, y) {
+    this.points = [x,  y]
   }
 
   advance() {
-    throw new Error("Remove this statement and implement this function");
+    if(this.direction == "north") this.points[1] += 1
+    else if(this.direction == "east") this.points[0] += 1
+    else if(this.direction == "south") this.points[1] -= 1
+    else this.points[0] -= 1
   }
 
-  instructions() {
-    throw new Error("Remove this statement and implement this function");
+  static instructions(letters) {
+    let result = []
+    for(let i = 0; i < letters.length; i++){
+      if("L" == letters[i]) result.push("turnLeft")
+      else if("R" == letters[i]) result.push("turnRight")
+      else result.push("advance")
+    }
+
+    return result
   }
 
-  place() {
-    throw new Error("Remove this statement and implement this function");
+  place(data) {
+    this.points[0] = data.x
+    this.points[1] = data.y 
+    this.direction = data.direction
   }
 
-  evaluate() {
-    throw new Error("Remove this statement and implement this function");
+  evaluate(str) {
+    for(let i = 0; i < str.length; i++){
+      if(str[i] == "A") this.advance()
+      else if(str[i] == "R") this.turnRight()
+      else if(str[i] == "L") this.turnLeft()
+    }
   }
 }
